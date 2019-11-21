@@ -19,7 +19,6 @@ namespace Pubcrew.Models
         public string bevProductLineName { get; set; }
 
         [ForeignKey("Inventory")]
-        public int BusinessId { get; set; }
         public Inventory Inventory { get; set; }
 
 
