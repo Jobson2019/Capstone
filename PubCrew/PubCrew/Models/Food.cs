@@ -20,7 +20,7 @@ namespace Pubcrew.Models
         [Display(Name = "Expiration")]
         public DateTime? foodExpirationDate { get; set; }
         [ForeignKey("Inventory")]
-        
+        public int InventoryId { get; set; }
         public Inventory Inventory { get; set; }
 
 

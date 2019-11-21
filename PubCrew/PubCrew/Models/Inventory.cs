@@ -10,7 +10,7 @@ namespace Pubcrew.Models
     public class Inventory
     {
         [Key]
-
+        public int inventoryId { get; set; }
 
         [Display(Name = "Product Name")]
         public string productName { get; set; }
@@ -21,15 +21,15 @@ namespace Pubcrew.Models
 
         [ForeignKey("Beverage")]
         public ICollection<Beverage> Beverages { get; set; }
-        public int beverageId { get; set; }
+        public int bevInventoryId { get; set; }
 
         [ForeignKey("Food")]
         public ICollection<Food> Foods { get; set; }
-        public int foodId { get; set; }
+        public int foodInventoryId { get; set; }
 
         [ForeignKey("Amenities")]
         public ICollection<Amenity> Amenities { get; set; }
-        public int amenityId { get; set; }
+        public int amenitiesInventoryId { get; set; }
 
 
         [ForeignKey("Location")]
