@@ -1,16 +1,33 @@
-﻿using System;
+﻿using Pubcrew.Models;
+using PubCrew.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace PubCrew.Controllers
 {
     public class LocationController : Controller
     {
+         ApplicationDbContext db;
+        public LocationController()
+        {
+            db = new ApplicationDbContext();
+        }
+
+        
+        
+         
+        
+        
+
+        
         // GET: Location
         public ActionResult Index()
         {
+
             return View();
         }
 
@@ -23,18 +40,26 @@ namespace PubCrew.Controllers
         // GET: Location/Create
         public ActionResult Create()
         {
+            ViewBag.Name = new SelectList(db.Locations.Where(l => !l.locationName.Contains("")).ToList(), "locationName", "LocationId");
             return View();
         }
 
         // POST: Location/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Location location)
         {
+            
             try
             {
+                Location newLocation = new Location();
                 // TODO: Add insert logic here
+                newLocation.locationName = location.locationName;
+                newLocation.LocationId = location.LocationId;
+                newLocation.BusinessId = location.BusinessId;
+                db.Locations.Add(newLocation);
+                db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Business");
             }
             catch
             {
@@ -45,7 +70,11 @@ namespace PubCrew.Controllers
         // GET: Location/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ViewBag.Name1 = new SelectList(db.Locations.ToList(), "locationName","LocationId");
+            Location location = new Location();
+            location = db.Locations.Where(e => e.LocationId == id).SingleOrDefault();
+            //addto
+            return PartialView();
         }
 
         // POST: Location/Edit/5
