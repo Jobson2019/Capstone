@@ -186,17 +186,22 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\Amenities.cs" />
+    <Compile Include="Models\Amenity.cs" />
+    <Compile Include="Models\AmenityJC.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Beverage.cs" />
+    <Compile Include="Models\BevJC.cs" />
     <Compile Include="Models\Bizroles.cs" />
     <Compile Include="Models\Business.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\FoodJC.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Special.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PubCrew.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,9 +18,12 @@ namespace Pubcrew.Models
 
         [Display(Name = "Product Line Name")]
         public string amProductLineName { get; set; }
+        [Display(Name = "Amount In Inventory")]
+        public int inventoryAmount { get; set; }
 
-        [ForeignKey("Inventory")]
-        public int inventoryId { get; set; }
-        public Inventory Inventory { get; set; }
+        [ForeignKey("AmenityJC")]
+        public int AmenityId { get; set; }
+        public AmenityJC AmenityJC { get; set; }
+        
     }
 }

@@ -11,7 +11,7 @@ namespace Pubcrew.Models
     public class Location
     {
         [Key]
-        public int LocationId { get; set; }
+        public int locationId { get; set; }
 
         [Display(Name = "Location Name")]
         public string locationName { get; set; }

@@ -54,7 +54,7 @@ namespace PubCrew.Controllers
                 Location newLocation = new Location();
                 // TODO: Add insert logic here
                 newLocation.locationName = location.locationName;
-                newLocation.LocationId = location.LocationId;
+                newLocation.locationId = location.locationId;
                 newLocation.BusinessId = location.BusinessId;
                 db.Locations.Add(newLocation);
                 db.SaveChanges();
@@ -72,7 +72,7 @@ namespace PubCrew.Controllers
         {
             ViewBag.Name1 = new SelectList(db.Locations.ToList(), "locationName","LocationId");
             Location location = new Location();
-            location = db.Locations.Where(e => e.LocationId == id).SingleOrDefault();
+            location = db.Locations.Where(e => e.locationId == id).SingleOrDefault();
             //addto
             return PartialView();
         }
