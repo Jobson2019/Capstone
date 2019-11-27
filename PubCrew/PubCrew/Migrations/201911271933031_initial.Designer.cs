@@ -13,7 +13,7 @@ namespace PubCrew.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201911211647549_initial"; }
+            get { return "201911271933031_initial"; }
         }
         
         string IMigrationMetadata.Source

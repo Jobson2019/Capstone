@@ -21,8 +21,6 @@ namespace Pubcrew.Models
         [Display(Name = "Last Name")]
         public string lastName { get; set; }
 
-        [Display(Name = "Location")]
-        public ICollection<Inventory> Location { get; set; }
 
 
 

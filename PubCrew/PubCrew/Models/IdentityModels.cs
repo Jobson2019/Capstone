@@ -28,8 +28,6 @@ namespace Pubcrew.Models
 
         public DbSet<BizRole> BizRoles { get; set; }
 
-        public DbSet<Inventory> Inventories { get; set; }
-
         public DbSet<Beverage> Beverages { get; set; }
 
         public DbSet<Food> Foods { get; set; }

@@ -16,8 +16,8 @@ namespace PubCrew.Models
         public Food Food { get; set; }
 
         [Key, Column(Order = 1)]
-        [ForeignKey("Inventory")]
-        public int inventoryId { get; set; }
-        public Inventory Inventory { get; set; }
+        [ForeignKey("Location")]
+        public int locationId { get; set; }
+        public Location Location { get; set; }
     }
 }
