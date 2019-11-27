@@ -20,5 +20,7 @@ namespace Pubcrew.Models
         public int BusinessId { get; set; }
         public Business Business { get; set; }
 
+
+
     }
 }

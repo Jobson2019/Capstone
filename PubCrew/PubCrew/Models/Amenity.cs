@@ -20,10 +20,10 @@ namespace Pubcrew.Models
         public string amProductLineName { get; set; }
         [Display(Name = "Amount In Inventory")]
         public int inventoryAmount { get; set; }
+        
 
-        [ForeignKey("AmenityJC")]
-        public int AmenityId { get; set; }
-        public AmenityJC AmenityJC { get; set; }
+
+        
         
     }
 }
