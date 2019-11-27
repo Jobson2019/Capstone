@@ -5,10 +5,7 @@ using System.Web;
 
 namespace PubCrew.Models
 {
-    public class Special
+    public class EventJC
     {
-        [Key]
-        public int specialId { get; set; }
-        [Display(Name = "")]
     }
 }
