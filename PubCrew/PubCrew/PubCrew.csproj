@@ -170,7 +170,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AmenityController.cs" />
+    <Compile Include="Controllers\AppUsersController.cs" />
     <Compile Include="Controllers\BeverageController.cs" />
+    <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -267,7 +269,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Amenity\" />
+    <Folder Include="Views\AppUsers\" />
     <Folder Include="Views\Beverage\" />
+    <Folder Include="Views\Business\" />
     <Folder Include="Views\Employee\" />
     <Folder Include="Views\Food\" />
     <Folder Include="Views\Location\" />

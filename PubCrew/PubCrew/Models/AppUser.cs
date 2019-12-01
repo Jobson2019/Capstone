@@ -20,7 +20,12 @@ namespace Pubcrew.Models
 
         [Display(Name = "Last Name")]
         public string lastName { get; set; }
-
+        [ForeignKey("ApplicationUser")]
+        public string ApplicationId { get; set; }
+        public ApplicationUser Application { get; set; }
+        [ForeignKey("Business")]
+        public int BusinessId { get; set; }
+        public Business Business { get; set; }
 
 
 

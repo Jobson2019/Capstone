@@ -68,7 +68,7 @@ namespace PubCrew.Controllers
         }
 
         // GET: Location/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditLocation(int id)
         {
             ViewBag.Name1 = new SelectList(db.Locations.ToList(), "locationName","LocationId");
             Location location = new Location();
