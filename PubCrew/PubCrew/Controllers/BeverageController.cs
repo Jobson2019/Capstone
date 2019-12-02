@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pubcrew.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace PubCrew.Controllers
 {
     public class BeverageController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Beverage
         public ActionResult Index()
         {
@@ -23,15 +25,22 @@ namespace PubCrew.Controllers
         // GET: Beverage/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
         // POST: Beverage/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Beverage beverage)
         {
             try
             {
+                Beverage newBeverage = new Beverage();
+                newBeverage.beverageId = beverage.beverageId;
+                newBeverage.bevProductLineName = beverage.bevProductLineName;
+                newBeverage.brandName = beverage.brandName;
+                db.Beverages.Add(newBeverage);
+                db.SaveChanges();
                 // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
@@ -45,6 +54,7 @@ namespace PubCrew.Controllers
         // GET: Beverage/Edit/5
         public ActionResult Edit(int id)
         {
+           
             return View();
         }
 

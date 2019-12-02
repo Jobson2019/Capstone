@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Pubcrew.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +10,15 @@ namespace PubCrew.Controllers
 {
     public class AppUsersController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         // GET: AppUsers
+
+        public AppUser GetLoggedInUser()
+        {
+            string currentId = User.Identity.GetUserId();
+            AppUser appUser = db.AppUsers.FirstOrDefault(u => u.ApplicationId == currentId);
+            return (appUser);
+        }
         public ActionResult Index()
         {
             return View();

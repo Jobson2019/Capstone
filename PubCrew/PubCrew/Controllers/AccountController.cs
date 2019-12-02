@@ -16,6 +16,7 @@ namespace PubCrew.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -148,7 +149,7 @@ namespace PubCrew.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> RegisterBusiness(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -157,13 +158,20 @@ namespace PubCrew.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await this.UserManager.AddToRoleAsync(user.Id, "Business");
+                    Business business = new Business();
+                    db.Businesses.Add(business);
+                    AppUser appUser = new AppUser();
+                    appUser.businessId = business.BusinessId;
+                    appUser.ApplicationId = user.Id;
+                    appUser.businessName = business.businessName;
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    db.AppUsers.Add(appUser);
+                    db.SaveChanges();
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

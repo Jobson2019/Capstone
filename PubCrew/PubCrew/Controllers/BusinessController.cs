@@ -41,7 +41,7 @@ namespace PubCrew.Controllers
             LoadBusiness();
             ViewBag.Name1 = new SelectList(db.Locations.ToList(), "locationName", "LocationId");
             AppUser BizOwner = GetLoggedInUser();
-            List<AppUser> appUsers = db.AppUsers.Where(a => a.BusinessId == BizOwner.BusinessId && a.UserId != BizOwner.UserId).ToList();
+            List<AppUser> appUsers = db.AppUsers.Where(a => a.businessId == BizOwner.businessId && a.UserId != BizOwner.UserId).ToList();
             return View(appUsers);
         }
 
@@ -66,7 +66,7 @@ namespace PubCrew.Controllers
                 db.Businesses.Add(business);
                 AppUser appUser = new AppUser();
                 appUser.ApplicationId = User.Identity.GetUserId();
-                appUser.BusinessId = business.BusinessId;
+                appUser.businessId = business.BusinessId;
                 db.AppUsers.Add(appUser);
                 db.SaveChanges();
                 // TODO: Add insert logic here
