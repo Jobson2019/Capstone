@@ -19,6 +19,8 @@ namespace Pubcrew.Models
 
         [Display(Name = "Expiration")]
         public string foodExpirationDate { get; set; }
+        [Display(Name = "Quantity")]
+        public int foodQuantity { get; set; }
         
 
 

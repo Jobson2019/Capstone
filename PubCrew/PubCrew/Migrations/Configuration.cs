@@ -14,21 +14,21 @@ namespace PubCrew.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Pubcrew.Models.ApplicationDbContext context)
+        protected override void Seed(Pubcrew.Models.ApplicationDbContext db)
         {
             db.Beverages.AddOrUpdate(b => b.beverageId,
-            new Beverage() { beverageId = 1, bevType = "Whiskey", brandName = "Jameson", bevProductLineName = "Jamo Classic" },
-            new Beverage() { beverageId = 2, bevType = "Gin", brandName = "Bombay", bevProductLineName = "Sapphire" },
-            new Beverage() { beverageId = 3, bevType = "Vodka", brandName = "Tito's", bevProductLineName = "Flagship" }
+            new Beverage() { beverageId = 1, bevType = "Whiskey", brandName = "Jameson", bevProductLineName = "Jamo Classic", bevQuantity = 3 },
+            new Beverage() { beverageId = 2, bevType = "Gin", brandName = "Bombay", bevProductLineName = "Sapphire", bevQuantity = 0 },
+            new Beverage() { beverageId = 3, bevType = "Vodka", brandName = "Tito's", bevProductLineName = "Flagship", bevQuantity = 5 }
             );
 
             db.Foods.AddOrUpdate(f => f.foodId,
-            new Food() { foodId = 1, foodName = "White Bread", foodProductLineName = "Wonder Bread", foodExpirationDate = "12/25/2019", },
-            new Food() { foodId = 2, foodName = "Ham", foodProductLineName = "Wonder Ham", foodExpirationDate = "12/23/2019" }
+            new Food() { foodId = 1, foodName = "White Bread", foodProductLineName = "Wonder Bread", foodExpirationDate = "12/25/2019", foodQuantity = 5 },
+            new Food() { foodId = 2, foodName = "Ham", foodProductLineName = "Wonder Ham", foodExpirationDate = "12/23/2019", foodQuantity = 4 }
             );
 
             db.Amenities.AddOrUpdate(a => a.amenityId,
-            new Amenity() { amenityId = 1, supplyName = "Toilet Paper", amProductLineName = "BigTP" }
+            new Amenity() { amenityId = 1, supplyName = "Toilet Paper", amProductLineName = "BigTP", amQuantity = 13 }
             );
 
              

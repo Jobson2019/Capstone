@@ -18,7 +18,9 @@ namespace Pubcrew.Models
 
         [Display(Name = "Product Line Name")]
         public string amProductLineName { get; set; }
-       
+        [Display(Name = "Quantity")]
+        public int amQuantity { get; set; }
+
         
 
 

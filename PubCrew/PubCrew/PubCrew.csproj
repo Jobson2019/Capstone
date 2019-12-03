@@ -189,6 +189,22 @@
     <Compile Include="Migrations\201912031558324_migthree.Designer.cs">
       <DependentUpon>201912031558324_migthree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912032003126_migfour.cs" />
+    <Compile Include="Migrations\201912032003126_migfour.Designer.cs">
+      <DependentUpon>201912032003126_migfour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912032205543_migfive.cs" />
+    <Compile Include="Migrations\201912032205543_migfive.Designer.cs">
+      <DependentUpon>201912032205543_migfive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912032213381_migsix.cs" />
+    <Compile Include="Migrations\201912032213381_migsix.Designer.cs">
+      <DependentUpon>201912032213381_migsix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912032258028_migsix1.cs" />
+    <Compile Include="Migrations\201912032258028_migsix1.Designer.cs">
+      <DependentUpon>201912032258028_migsix1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -299,6 +315,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912031558324_migthree.resx">
       <DependentUpon>201912031558324_migthree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912032003126_migfour.resx">
+      <DependentUpon>201912032003126_migfour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912032205543_migfive.resx">
+      <DependentUpon>201912032205543_migfive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912032213381_migsix.resx">
+      <DependentUpon>201912032213381_migsix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912032258028_migsix1.resx">
+      <DependentUpon>201912032258028_migsix1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
