@@ -18,8 +18,7 @@ namespace Pubcrew.Models
 
         [Display(Name = "Product Line Name")]
         public string amProductLineName { get; set; }
-        [Display(Name = "Amount In Inventory")]
-        public int inventoryAmount { get; set; }
+       
         
 
 

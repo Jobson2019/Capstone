@@ -11,14 +11,18 @@ namespace Pubcrew.Models
     {
         [Key]
         public int beverageId { get; set; }
+        [Display(Name = "Beverage Type")]
+        public string bevType { get; set; }
 
         [Display(Name = "Brand Name")]
         public string brandName { get; set; }
 
         [Display(Name = "Product Line Name")]
         public string bevProductLineName { get; set; }
-
         
+
+
+
 
 
 

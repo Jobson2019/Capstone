@@ -10,7 +10,7 @@ namespace Pubcrew.Models
     public class Food
     {
         [Key]
-        public int FoodId { get; set; }
+        public int foodId { get; set; }
         [Display(Name = "Food")]
         public string foodName { get; set; }
 
@@ -18,7 +18,7 @@ namespace Pubcrew.Models
         public string foodProductLineName { get; set; }
 
         [Display(Name = "Expiration")]
-        public DateTime? foodExpirationDate { get; set; }
+        public string foodExpirationDate { get; set; }
         
 
 
