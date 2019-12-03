@@ -22,7 +22,7 @@ namespace Pubcrew.Models
         public string lastName { get; set; }
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
-        public ApplicationUser Application { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
         [ForeignKey("Business")]
         public int businessId { get; set; }
         public string businessName { get; set; }
